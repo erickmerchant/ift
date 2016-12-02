@@ -1,2 +1,3 @@
 # ift
-A ternary function for templates
+
+A ternary function with a default
