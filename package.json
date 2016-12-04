@@ -1,0 +1,26 @@
+{
+  "name": "@erickmerchant/ift",
+  "version": "1.0.0",
+  "description": "A ternary function with a default",
+  "main": "main.js",
+  "scripts": {
+    "test": "standard && tape test.js | faucet",
+    "cover": "nyc --reporter=html npm test"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "nyc": "^10.0.0",
+    "standard": "^8.0.0",
+    "tape": "^4.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickmerchant/ift.git"
+  },
+  "author": "Erick Merchant <erickmerchant@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erickmerchant/ift/issues"
+  },
+  "homepage": "https://github.com/erickmerchant/ift#readme"
+}
