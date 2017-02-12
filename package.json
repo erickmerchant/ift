@@ -1,6 +1,6 @@
 {
   "name": "@erickmerchant/ift",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A ternary function with a default",
   "main": "dist/main.js",
   "scripts": {
