@@ -1,9 +1,7 @@
 module.exports = function (defaultNope) {
   return function (val, yep, nope) {
-    let result
-
     if (typeof val === 'object' && val[Symbol.iterator] != null) {
-      result = []
+      let result = []
 
       for (let item of val) {
         result.push(typeof yep === 'function' ? yep(item) : yep)
@@ -14,7 +12,7 @@ module.exports = function (defaultNope) {
       yep = result
     }
 
-    result = val ? yep : (nope != null ? nope : defaultNope)
+    let result = val ? yep : (nope != null ? nope : defaultNope)
 
     if (typeof result === 'function') {
       result = result()
