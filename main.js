@@ -15,7 +15,7 @@ module.exports = function (defaultNope) {
     let result = val ? yep : (nope != null ? nope : defaultNope)
 
     if (typeof result === 'function') {
-      result = result()
+      result = result(val)
     }
 
     return result

@@ -39,10 +39,11 @@ test('test nope', function (t) {
 test('test functions', function (t) {
   const ift = main()
   const symbol = Symbol()
+  const a = null
 
   t.plan(1)
 
-  t.equals(ift(true, () => symbol), symbol)
+  t.equals(ift(a || symbol, (a) => a), symbol)
 })
 
 test('test iterable array', function (t) {
