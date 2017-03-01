@@ -2,12 +2,12 @@ const test = require('tape')
 const main = require('./main')
 
 test('test default', function (t) {
-  const symbol = Symbol()
+  const symbol = Symbol('test')
   const ift = main(symbol)
 
   t.plan(1)
 
-  t.equals(ift(false, Symbol()), symbol)
+  t.equals(ift(false, Symbol('test')), symbol)
 })
 
 test('test no default', function (t) {
@@ -15,12 +15,12 @@ test('test no default', function (t) {
 
   t.plan(1)
 
-  t.equals(ift(false, Symbol()), undefined)
+  t.equals(ift(false, Symbol('test')), undefined)
 })
 
 test('test yep', function (t) {
   const ift = main()
-  const symbol = Symbol()
+  const symbol = Symbol('test')
 
   t.plan(1)
 
@@ -29,7 +29,7 @@ test('test yep', function (t) {
 
 test('test nope', function (t) {
   const ift = main()
-  const symbol = Symbol()
+  const symbol = Symbol('test')
 
   t.plan(1)
 
@@ -38,7 +38,7 @@ test('test nope', function (t) {
 
 test('test functions', function (t) {
   const ift = main()
-  const symbol = Symbol()
+  const symbol = Symbol('test')
   const a = null
 
   t.plan(1)
@@ -71,7 +71,7 @@ test('test iterable set', function (t) {
 })
 
 test('test iterators non-function', function (t) {
-  const symbol = Symbol()
+  const symbol = Symbol('test')
   const ift = main()
 
   t.plan(1)
@@ -80,7 +80,7 @@ test('test iterators non-function', function (t) {
 })
 
 test('test iterators zero length', function (t) {
-  const symbol = Symbol()
+  const symbol = Symbol('test')
   const ift = main(symbol)
 
   t.plan(1)
