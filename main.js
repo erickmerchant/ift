@@ -1,6 +1,6 @@
 module.exports = function (defaultNope) {
   return function (val, yep, nope) {
-    if (typeof val === 'object' && val[Symbol.iterator] != null) {
+    if (Array.isArray(val) || (typeof val === 'object' && val[Symbol.iterator] != null)) {
       let result = []
 
       for (let item of val) {
