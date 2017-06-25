@@ -1,11 +1,11 @@
 module.exports = function (defaultNope) {
   return function (val, yep, nope) {
-    if (Array.isArray(val) || (typeof val === 'object' && val[Symbol.iterator] != null)) {
+    if (Array.isArray(val) || (typeof val === 'object' && val.forEach != null)) {
       let result = []
 
-      for (let item of val) {
-        result.push(typeof yep === 'function' ? yep(item) : yep)
-      }
+      val.forEach(function (val, key) {
+        result.push(typeof yep === 'function' ? yep(val, key) : yep)
+      })
 
       val = result.length > 0
 

@@ -59,7 +59,7 @@ test('test iterable map', function (t) {
 
   t.plan(1)
 
-  t.deepEquals(ift(new Map([['a', 1], ['b', 2]]), (i) => i), [['a', 1], ['b', 2]])
+  t.deepEquals(ift(new Map([['a', 1], ['b', 2]]), (val, key) => [key, val]), [['a', 1], ['b', 2]])
 })
 
 test('test iterable set', function (t) {
